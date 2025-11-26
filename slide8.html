@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید 8: تولید پاسخ (RAG)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .concept-card {
+            background-color: rgba(30, 41, 59, 0.7);
+            border: 1px solid #4b5563;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            background-color: #a855f7; /* purple-500 */
+        }
+        .highlight-term {
+            color: #d8b4fe; /* purple-300 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container cover-background" id="slide-8">
+    
+    <!-- هدر -->
+    <header>
+        <h2 class="slide-title">۴. Generator</h2>
+        <p class="slide-subtitle">گذر از "جستجوی لینک" به "تولید پاسخ" با معماری RAG</p>
+    </header>
+
+    <!-- بدنه -->
+    <main class="flex gap-8 flex-grow pt-4">
+        
+        <!-- ستون توضیحات -->
+        <div class="w-1/2 flex flex-col justify-center">
+            
+            <div class="concept-card">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">نقش Reader </h3>
+                <p class="text-gray-300 text-lg leading-8">
+                    پس از اینکه Reranker بهترین اسناد را انتخاب کرد، مدل <span class="highlight-term">Reader</span> محتوای آن‌ها را با دقت می‌خواند تا بخش‌های حاوی جواب (Evidence) را استخراج کند.
+                </p>
+            </div>
+
+            <div class="concept-card">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">چالش: توهم‌زایی (Hallucination)</h3>
+                <p class="text-gray-300 text-lg leading-8">
+                    مدل‌های زبانی (LLMs) اگر بدون منبع رها شوند، ممکن است اطلاعات غلط تولید کنند. ما نباید به حافظه مدل اعتماد کنیم، بلکه باید به <span class="highlight-term">متن بازیابی شده</span> تکیه کنیم.
+                </p>
+            </div>
+
+            <div class="concept-card" style="border-color: #a855f7;">
+                <h3 class="text-2xl font-bold text-white mb-3">راه حل: RAG</h3>
+                <p class="text-gray-300 text-lg leading-8">
+                    <strong>Retrieval-Augmented Generation:</strong><br>
+                    ترکیب قدرت جستجو (صحت اطلاعات) با قدرت تولید متن (خلاصه سازی و بیان شیوا).
+                </p>
+            </div>
+
+        </div>
+
+        <!-- ستون ویژوال -->
+        <div class="w-1/2 flex flex-col justify-center items-center bg-gray-800/30 rounded-2xl border border-gray-700 p-6">
+            <div class="text-center mb-8">
+                <span class="text-6xl block mb-4">🧠 + 📚</span>
+                <h4 class="text-xl text-purple-200 font-bold">LLM + Knowledge Base</h4>
+            </div>
+            
+            <a href="example_rag.html" class="nav-button bg-purple-600 hover:bg-purple-700 text-lg py-4 px-10 w-full text-center justify-center shadow-lg shadow-purple-500/30">
+                 عملکرد RAG 
+            </a>
+
+            <p class="mt-6 text-sm text-gray-500 text-center">
+                در این مثال می‌بینیم چگونه اسناد بازیابی شده وارد مدل می‌شوند تا پاسخ نهایی ساخته شود.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- ناوبری -->
+    <div class="nav-bar">
+        <a href="slide7.html" class="nav-button flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            اسلاید قبلی (7)
+        </a>
+        <span class="text-xl font-bold text-white self-center">اسلاید 8 از 10</span>
+        <a href="slide9.html" class="nav-button flex items-center">
+            اسلاید بعدی (9)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

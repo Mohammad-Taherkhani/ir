@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید 7: رتبه‌بندی مجدد (Reranker)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .feature-box {
+            background-color: #1e293b; /* bg-slate-800 */
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #fbbf24; /* amber-400 */
+            transition: all 0.3s;
+        }
+        .feature-box:hover {
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
+            transform: translateY(-2px);
+        }
+        .feature-title {
+            color: #fbbf24; /* amber-400 */
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container cover-background" id="slide-7">
+    
+    <!-- هدر استاندارد -->
+    <header>
+        <h2 class="slide-title">۳. رتبه‌بندی مجدد (Reranker)</h2>
+        <p class="slide-subtitle">دقت در اولویت: Cross-Encoder</p>
+    </header>
+
+    <!-- بدنه اصلی -->
+    <main class="flex flex-grow gap-10">
+        
+        <div class="w-1/2 flex flex-col justify-center">
+            <div class="feature-box">
+                <div class="feature-title">هدف: افزایش دقت (Precision)</div>
+                <p class="text-gray-300">
+                    Retriever (Bi-Encoder) سریع است اما در جزئیات ظریف معنایی خطا دارد. Reranker با بررسی دقیق‌تر، لیست ۱۰۰۰ تایی را به ۵۰ سند واقعاً برتر کاهش می‌دهد.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-title">مکانیزم: Cross-Encoder (رمزگذار متقابل)</div>
+                <p class="text-gray-300">
+                    Cross-Encoder از یک مدل ترنسفورمر واحد استفاده می‌کند که <strong>پرس‌وجو و سند را همزمان</strong> به عنوان یک جفت ورودی می‌گیرد. این کار امکان مقایسه عمیق و تعامل (Interaction) بین تک‌تک کلمات هر دو متن را فراهم می‌کند.
+                </p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-title">چرا کندتر است؟</div>
+                <p class="text-gray-300">
+                    برای هر سند باید یک محاسبه مجدد کامل انجام شود (برخلاف Bi-Encoder که بردارها را از قبل آماده دارد). به همین دلیل فقط روی تعداد محدودی از نامزدها (مثلاً ۱۰۰۰ سند) اجرا می‌شود.
+                </p>
+            </div>
+        </div>
+
+        <div class="w-1/2 flex flex-col justify-center items-center">
+            <a href="example_crossencoder.html" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-4 px-8 rounded-full shadow-xl transition duration-300 transform hover:scale-105 text-lg">
+                عملکرد Cross-Encoder
+            </a>
+            
+            <!-- نمودار Cross-Encoder -->
+            
+
+            <div class="mt-8 text-center text-gray-400">
+                <p class="text-lg font-bold text-amber-400">نتیجه گام رتبه‌بندی مجدد:</p>
+                <p>دریافت ۵۰ سند با بالاترین ارتباط معنایی (بسیار دقیق).</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- نوار ناوبری استاندارد -->
+    <div class="nav-bar">
+        <a href="slide6.html" class="nav-button flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            اسلاید قبلی (6)
+        </a>
+        <span class="text-xl font-bold text-white self-center">اسلاید 7 از 10</span>
+        <a href="slide8.html" class="nav-button flex items-center">
+            اسلاید بعدی (8)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

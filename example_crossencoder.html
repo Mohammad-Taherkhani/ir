@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مثال: Cross-Encoder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .input-group {
+            background-color: #1e293b; /* bg-slate-800 */
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #fbbf24; /* amber-400 */
+        }
+        .text-section {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #4b5563;
+        }
+        .text-section:last-child {
+            border-bottom: none;
+        }
+        .interaction-highlight {
+            background-color: #fbbf2420;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            color: #fcd34d; /* amber-300 */
+        }
+        .score-output {
+            background-color: #1f2937;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #a78bfa;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #a78bfa; /* violet-400 */
+            text-align: center;
+        }
+        .token-interaction {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #0f172a;
+            border-radius: 8px;
+            border: 1px solid #64748b;
+        }
+    </style>
+</head>
+<body class="bg-body-bg flex flex-col justify-center items-center min-h-screen p-10">
+
+    <div class="w-full max-w-4xl p-10 bg-slide-bg rounded-2xl shadow-2xl border-2 border-amber-500/30">
+        <h1 class="text-3xl font-bold text-amber-400 border-b border-amber-400/50 pb-4 mb-8 text-center">
+            Cross-Encoder: بررسی تعاملی برای دقت نهایی
+        </h1>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+            
+            <!-- Input and Process -->
+            <div class="md:w-1/2">
+                <h3 class="text-2xl text-white font-bold mb-4">ورودی به Cross-Encoder:</h3>
+                <div class="input-group">
+                    
+                    <div class="text-section">
+                        <span class="text-amber-300 font-bold block mb-1">پرس‌وجو (Query):</span>
+                        <p class="text-lg text-white">"بهترین روش <span class="interaction-highlight">بازاریابی محتوایی</span> برای استارتاپ‌ها"</p>
+                    </div>
+
+                    <div class="text-section mt-3">
+                        <span class="text-amber-300 font-bold block mb-1">سند کاندید (Document):</span>
+                        <p class="text-base text-gray-300">
+                            مقاله ۱: "...در اینجا به اهمیت <span class="interaction-highlight">محتوا</span> برای <span class="interaction-highlight">بازاریابی</span> و برندسازی می‌پردازیم. استارتاپ‌ها باید..."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="token-interaction text-gray-400">
+                    <p class="font-bold text-white mb-2">فرآیند تعامل (Interaction):</p>
+                    <p class="text-sm leading-relaxed">
+                        مدل Cross-Encoder هر دو متن را به صورت یک دنباله واحد پردازش می‌کند. این کار به آن اجازه می‌دهد تا ببیند چگونه کلمه "بازاریابی" در Query به کلمه "بازاریابی" در Document مرتبط است، نه فقط شباهت کلی بردارها. این عمق مقایسه، دقت بالاتری را تضمین می‌کند.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Output and Comparison -->
+            <div class="md:w-1/2">
+                <h3 class="text-2xl text-white font-bold mb-4">خروجی و مقایسه امتیازدهی:</h3>
+                
+                <div class="mb-6">
+                    <p class="text-gray-400 mb-2">امتیازدهی Cross-Encoder (دقت بالا):</p>
+                    <div class="score-output">۹۸.۵٪</div>
+                    <p class="text-sm text-green-400 mt-2">این امتیاز یک رتبه‌بندی دقیق از ۱۰۰ است که نشان‌دهنده ارتباط بسیار بالا می‌باشد.</p>
+                </div>
+
+                <div class="p-4 bg-red-900/20 rounded-lg border-l-4 border-red-500">
+                    <p class="text-xl text-red-300 font-bold mb-2">مشکل Bi-Encoder (فقط سرعت):</p>
+                    <p class="text-gray-400 text-sm">
+                        Bi-Encoder ممکن است سندی را که فقط شامل کلماتی مثل "بازاریابی" و "محتوا" است (اما در مورد "روش‌های استارتاپی" نیست) نیز با امتیاز بالا بازیابی کند (مثلاً ۰.۸۵). اما Cross-Encoder دقت می‌کند که آیا هدف پرس‌وجو کاملاً برآورده می‌شود یا خیر.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="slide7.html" class="nav-button mt-10 self-center justify-center w-1/3 mx-auto">
+            بازگشت به اسلاید 7 
+        </a>
+    </div>
+</body>
+</html>

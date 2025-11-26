@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مثال: Bi-Encoder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* استایل سفارشی برای نمایش برداری */
+        .vector-space {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background-color: #1f2937; /* bg-gray-800 */
+            border: 2px solid #4b5563;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            margin: 2rem auto;
+        }
+        .point {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: white;
+            transition: all 1s ease-out;
+        }
+        .query-point {
+            top: 50%;
+            left: 50%;
+            background-color: #3b82f6; /* blue-500 */
+            border: 3px solid #1d4ed8;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+        .document-point-good {
+            background-color: #10b981; /* emerald-500 */
+            border: 2px solid #047857;
+        }
+        .document-point-bad {
+            background-color: #ef4444; /* red-500 */
+            border: 2px solid #b91c1c;
+        }
+        .line {
+            position: absolute;
+            height: 2px;
+            transform-origin: 0 0;
+            opacity: 0.5;
+            transition: opacity 1s;
+        }
+        .line-good {
+            background-color: #10b981;
+        }
+        .line-bad {
+            background-color: #ef4444;
+        }
+        .score {
+            font-weight: bold;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="bg-body-bg flex flex-col justify-center items-center min-h-screen p-10">
+
+    <div class="w-full max-w-4xl p-10 bg-slide-bg rounded-2xl shadow-2xl border-2 border-emerald-500/30">
+        <h1 class="text-3xl font-bold text-emerald-400 border-b border-emerald-400/50 pb-4 mb-8 text-center">
+            Bi-Encoder: نمایش برداری در فضای معنایی
+        </h1>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+            
+            <!-- Visualization -->
+            <div class="md:w-1/2 flex flex-col items-center">
+                <div class="vector-space" id="vectorSpace">
+                    <div class="point query-point" style="top: 175px; left: 175px;">Q</div>
+                    
+                    <!-- Good Document -->
+                    <div class="point document-point-good" style="top: 80px; left: 220px;">D1</div>
+                    <!-- Bad Document -->
+                    <div class="point document-point-bad" style="top: 300px; left: 50px;">D2</div>
+
+                    <!-- Lines (will be added by JS for accuracy) -->
+                    <!-- D1 Line -->
+                    <div class="line line-good" style="top: 175px; left: 175px; width: 67px; transform: rotate(-56.5deg);"></div>
+                    <!-- D2 Line -->
+                    <div class="line line-bad" style="top: 175px; left: 175px; width: 147px; transform: rotate(-230deg);"></div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <p class="text-white text-lg font-bold">شباهت کسینوسی (Cosine Similarity)</p>
+                    <p class="text-gray-400">زاویه کوچکتر = شباهت بیشتر = امتیاز بالاتر</p>
+                </div>
+            </div>
+
+            <!-- Explanation -->
+            <div class="md:w-1/2">
+                <div class="p-4 bg-gray-900 rounded-lg mb-4">
+                    <h3 class="text-xl text-blue-400 font-bold">پرس‌وجو (Query):</h3>
+                    <p class="text-lg text-white mt-1">"روش‌های بهبود سئوی سایت"</p>
+                </div>
+
+                <div class="p-4 bg-gray-900 rounded-lg mb-4">
+                    <h3 class="text-xl text-emerald-400 font-bold">D1 (سند مرتبط):</h3>
+                    <p class="text-lg text-white mt-1">"راهنمای جامع بهینه‌سازی موتور جستجو (SEO) برای مبتدیان"</p>
+                    <div class="score text-emerald-300">امتیاز شباهت بالا: 0.92</div>
+                </div>
+
+                <div class="p-4 bg-gray-900 rounded-lg">
+                    <h3 class="text-xl text-red-400 font-bold">D2 (سند نامرتبط):</h3>
+                    <p class="text-lg text-white mt-1">"آموزش کامل برنامه‌نویسی پایتون"</p>
+                    <div class="score text-red-300">امتیاز شباهت پایین: 0.15</div>
+                </div>
+
+                <p class="text-gray-400 mt-6">
+                    هدف Bi-Encoder این است که سندهای مرتبط (D1) را تا حد امکان نزدیک به بردار Query (Q) قرار دهد و سندهای نامرتبط (D2) را دور کند. این سرعت فیلتر کردن اولیه را تضمین می‌کند.
+                </p>
+            </div>
+        </div>
+        
+        <a href="slide6.html" class="nav-button mt-10 self-center justify-center w-1/3 mx-auto">
+            بازگشت به اسلاید 6 
+        </a>
+    </div>
+</body>
+</html>

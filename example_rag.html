@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مثال: مکانیزم RAG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .rag-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .context-box {
+            background-color: #334155;
+            border-left: 4px solid #a855f7;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        .prompt-box {
+            background-color: #1e293b;
+            border: 2px dashed #64748b;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            width: 100%;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        .arrow-down {
+            font-size: 2rem;
+            color: #a855f7;
+            margin: 0.5rem 0;
+        }
+        .final-answer {
+            background-color: #2e1065; /* deep purple */
+            border: 2px solid #a855f7;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-body-bg flex flex-col justify-center items-center min-h-screen p-8">
+
+    <div class="w-full max-w-3xl p-8 bg-slide-bg rounded-2xl shadow-2xl border-2 border-purple-500/30">
+        <h1 class="text-3xl font-bold text-purple-400 border-b border-purple-400/50 pb-4 mb-6 text-center">
+            RAG: تولید پاسخ 
+        </h1>
+
+        <div class="rag-container">
+            
+            <!-- ورودی پرس و جو -->
+            <div class="w-full mb-4 text-right">
+                <span class="text-gray-400 text-sm font-bold">پرس‌وجوی کاربر:</span>
+                <div class="text-xl text-white font-bold">"آیا مصرف قهوه برای فشار خون مضر است؟"</div>
+            </div>
+
+            <!-- مرحله 1: اسناد بازیابی شده -->
+            <div class="w-full">
+                <span class="text-purple-300 text-sm font-bold mb-2 block">۱. اسناد بازیابی شده (توسط Reader):</span>
+                
+                <div class="context-box" style="animation-delay: 0.1s;">
+                    <span class="text-xs text-gray-400">[سند ۱ - ژورنال پزشکی]</span><br>
+                    ...کافئین می‌تواند باعث افزایش کوتاه‌مدت فشار خون شود، اما اثر بلندمدت آن در افراد سالم هنوز اثبات نشده است...
+                </div>
+                
+                <div class="context-box" style="animation-delay: 0.3s;">
+                    <span class="text-xs text-gray-400">[سند ۲ - انجمن قلب]</span><br>
+                    ...افرادی که فشار خون بالا دارند باید در مصرف قهوه احتیاط کنند. مصرف بیش از ۲ فنجان توصیه نمی‌شود...
+                </div>
+            </div>
+
+            <div class="arrow-down">⬇</div>
+
+            <!-- مرحله 2: پرامپت نهایی -->
+            <div class="prompt-box">
+                <span class="absolute -top-3 right-4 bg-gray-700 px-2 text-xs text-white rounded">ورودی به LLM (Generator)</span>
+                <p class="text-gray-400 font-mono text-sm dir-ltr text-left">
+                    Instructions: Answer the query based ONLY on the provided documents.<br>
+                    Context: [Document 1 Content], [Document 2 Content]<br>
+                    Query: "آیا مصرف قهوه برای فشار خون مضر است؟"
+                </p>
+            </div>
+
+            <div class="arrow-down">⬇</div>
+
+            <!-- مرحله 3: پاسخ نهایی -->
+            <div class="final-answer">
+                <span class="text-purple-300 text-sm font-bold block mb-2">پاسخ نهایی (بدون توهم):</span>
+                <p class="text-white leading-relaxed text-lg">
+                    بر اساس منابع موجود، مصرف قهوه ممکن است باعث <strong>افزایش موقت</strong> فشار خون شود. با این حال، به افراد دارای فشار خون بالا توصیه می‌شود که مصرف خود را محدود کنند (معمولاً کمتر از ۲ فنجان). اثر بلندمدت در افراد سالم هنوز قطعی نیست.
+                </p>
+                <div class="mt-3 flex gap-2">
+                    <span class="bg-purple-800 text-purple-200 text-xs px-2 py-1 rounded">منبع: ژورنال پزشکی</span>
+                    <span class="bg-purple-800 text-purple-200 text-xs px-2 py-1 rounded">منبع: انجمن قلب</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <a href="slide8.html" class="nav-button mt-8 self-center justify-center w-1/3 mx-auto">
+            بازگشت به اسلاید 8 
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید ۳: مبانی فنی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <!-- لینک به فایل استایل‌های مشترک (برای تم کلی و ناوبری) -->
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+<div class="slide-container cover-background" id="slide-3">
+    
+    <header>
+        <h2 class="slide-title">مبانی فنی (Technical Foundation)</h2>
+        <p class="slide-subtitle">معماری ترنسفورمر و پارادایم PLM</p>
+    </header>
+
+    <main class="flex gap-8 flex-grow">
+        
+        <!-- ستون ۱: معماری ترنسفورمر -->
+        <div class="w-1/2 p-6 bg-gray-800/50 rounded-2xl border-2 border-primary-color/30 flex flex-col justify-between">
+            <div>
+                <h3 class="text-2xl font-bold text-primary-color mb-6 flex items-center">
+                    <span class="text-3xl ml-3"></span>
+                    معماری ترنسفورمر (Transformer)
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-900/50 p-4 rounded-lg border-r-4 border-primary-color">
+                        <h4 class="text-xl font-bold text-white mb-1">مکانیزم توجه (Attention Mechanism)</h4>
+                        <p class="text-gray-300 text-lg">
+                            به مدل اجازه می‌دهد تا هنگام پردازش یک کلمه، اهمیت <strong>سایر کلمات</strong> جمله را درک کند.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-900/50 p-4 rounded-lg border-r-4 border-primary-color">
+                        <h4 class="text-xl font-bold text-white mb-1">Self-Attention</h4>
+                        <p class="text-gray-300 text-lg">
+                            نحوه تعیین وزن‌ها بین توکن‌های ورودی در داخل همان جمله.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- دکمه مثال کاربردی -->
+            <a href="example_transformer.html" class="nav-button mt-6 self-center bg-sky-600 hover:bg-sky-700 w-full justify-center text-lg py-4">
+               Attention مثال
+            </a>
+        </div>
+
+        <!-- ستون ۲: پارادایم PLM -->
+        <div class="w-1/2 p-6 bg-gray-800/50 rounded-2xl border-2 border-highlight-color/30 flex flex-col justify-between">
+            <div>
+                <h3 class="text-2xl font-bold text-highlight-color mb-6 flex items-center">
+                    <span class="text-3xl ml-3"></span>
+                    پارادایم آموزش (PLM Paradigm)
+                </h3>
+                
+                <ul class="space-y-4 pr-0">
+                    <li class="flex items-start">
+                        <span class="text-highlight-color text-xl ml-2 font-bold">1.</span>
+                        <div>
+                            <strong class="text-white text-xl">Pre-training (پیش‌آموزش)</strong>
+                            <p class="text-gray-400">یادگیری دانش عمومی زبان روی حجم عظیمی از داده.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-highlight-color text-xl ml-2 font-bold">2.</span>
+                        <div>
+                            <strong class="text-white text-xl">Fine-tuning (تنظیم دقیق)</strong>
+                            <p class="text-gray-400">تطبیق دانش برای وظایف تخصصی مانند IR یا Classification.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- بخش انواع مدل -->
+            <div class="mt-8 pt-4 border-t border-gray-600">
+                <h4 class="text-lg font-bold text-gray-300 mb-3">انواع معماری‌های رایج:</h4>
+                <div class="flex gap-2 text-center text-sm">
+                    <div class="flex-1 bg-gray-700 p-3 rounded-lg border-b-4 border-primary-color">
+                        <strong class="block text-primary-color">Encoder-only</strong> (مانند BERT)
+                    </div>
+                    <div class="flex-1 bg-gray-700 p-3 rounded-lg border-b-4 border-purple-400">
+                        <strong class="block text-purple-400">Decoder-only</strong> (مانند GPT)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="nav-bar">
+        <a href="slide2.html" class="nav-button flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            اسلاید قبلی (۲)
+        </a>
+        <span class="text-xl font-bold text-white self-center">اسلاید ۳ از ۱۰</span>
+        <a href="slide4.html" class="nav-button flex items-center">
+            اسلاید بعدی (۴)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

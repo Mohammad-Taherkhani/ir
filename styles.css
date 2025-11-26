@@ -1,0 +1,101 @@
+/* Presentation Stylesheet - استایل‌های مشترک برای ارائه */
+
+/* متغیرهای رنگی برای تم تیره و مدرن */
+:root {
+    --slide-bg: #1f2937; /* Dark Slate Blue/Gray for slide background */
+    --body-bg: #0f172a;  /* Dark Blue/Navy for the area outside slides */
+    --primary-color: #34d399; /* Emerald/Teal for accents and titles */
+    --text-color: #f3f4f6; /* Light Off-White for main text */
+    --secondary-text: #9ca3af; /* Gray for subtle text/subtitles */
+    --highlight-color: #f59e0b; /* Amber for highlights */
+}
+
+/* تنظیمات اصلی بدنه و فونت */
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Vazirmatn', sans-serif, Tahoma; /* فرض بر دسترسی به فونت فارسی Vazirmatn */
+    direction: rtl; /* تنظیم جهت نوشتار به راست به چپ */
+}
+
+/* کانتینر اصلی اسلاید برای شبیه‌سازی صفحه نمایش */
+.slide-container {
+    width: 90vw;
+    max-width: 1440px;
+    aspect-ratio: 16 / 9; /* نسبت استاندارد ارائه */
+    background-color: var(--slide-bg);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); /* سایه عمیق برای جلوه سه بعدی */
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out; /* انیمیشن نرم برای تغییرات */
+    position: relative; /* برای قرار دادن ناوبری */
+}
+
+/* استایل عنوان اصلی اسلایدها */
+.slide-title {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    font-weight: 800;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* استایل زیرنویس‌ها */
+.slide-subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+/* استایل کانتینر ناوبری */
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0 0 20px 20px;
+}
+
+/* استایل دکمه‌های ناوبری */
+.nav-button {
+    background-color: var(--primary-color);
+    color: var(--body-bg);
+    font-weight: 800;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    box-shadow: 0 5px 15px rgba(52, 211, 153, 0.4);
+    transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* حذف خط زیر لینک */
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #10b981; /* کمی تیره‌تر */
+    transform: translateY(-3px);
+}
+
+.nav-button:disabled, .nav-button.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+.cover-background {
+ background: linear-gradient(to bottom, #020617 0%, #1e293b 100%); 
+}

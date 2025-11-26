@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید 10: جمع‌بندی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght=100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .summary-box {
+            background-color: #0f172a; /* bg-slate-900 */
+            border-radius: 12px;
+            padding: 2rem;
+            border: 2px solid #3b82f6; /* blue-500 */
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+        .summary-list li {
+            font-size: 1.15rem;
+            color: #ccc;
+            margin-bottom: 0.75rem;
+            padding-right: 1rem;
+            border-right: 3px solid #2563eb; /* blue-600 */
+        }
+        .highlight {
+            color: #93c5fd; /* blue-300 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container cover-background" id="slide-10">
+    
+    <!-- هدر -->
+    <header>
+        <h2 class="slide-title"> جمع‌بندی: RAG در یک نگاه</h2>
+        <p class="slide-subtitle">خلاصه‌ای از مسیری که طی شد</p>
+    </header>
+
+    <!-- بدنه -->
+    <main class="flex flex-grow justify-center items-center">
+        
+        <div class="w-full max-w-4xl summary-box">
+            <h3 class="text-3xl font-bold text-blue-400 mb-6 text-center">RAG: ترکیبی هوشمند برای دقت و به‌روز بودن</h3>
+            
+            <ul class="summary-list list-none space-y-4">
+                <li>
+                    <span class="highlight">فاز آماده‌سازی (Pre-processing):</span> تبدیل داده‌های خام به <span class="highlight">بردارهای معنایی</span> برای جستجوی سریع.
+                </li>
+                <li>
+                    <span class="highlight">بازنویس پرس‌وجو (Rewriter - اختیاری):</span> شفاف‌سازی Query مبهم کاربر (به‌خصوص در چت) برای بهبود <span class="highlight">شانس بازیابی</span>.
+                </li>
+                <li>
+                    <span class="highlight">بازیاب (Retriever - Bi-Encoder):</span> انتخاب سریع <span class="highlight">هزاران کاندید</span> از طریق مقایسه برداری. (فاز سرعت)
+                </li>
+                <li>
+                    <span class="highlight">رتبه‌بندی مجدد (Reranker - Cross-Encoder):</span> بررسی دقیق تعامل کلمات برای انتخاب <span class="highlight">چند سند مرتبط نهایی</span>. (فاز دقت)
+                </li>
+                <li>
+                    <span class="highlight">تولید پاسخ (Reader & Generator):</span> تزریق اسناد نهایی به LLM برای تولید پاسخی <span class="highlight">مستند، دقیق و بدون توهم</span>.
+                </li>
+            </ul>
+        </div>
+        
+    </main>
+
+    <!-- ناوبری -->
+    <div class="nav-bar">
+        <!-- دکمه قبلی -->
+        <a href="slide9.html" class="nav-button flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            اسلاید قبلی (9)
+        </a>
+        
+        <!-- دکمه منابع (جدید) -->
+        <a href="slide11.html" class="nav-button flex items-center bg-purple-600 hover:bg-purple-700 text-sm py-2 px-4 shadow-lg shadow-white/10">
+            منابع
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+        </a>
+        
+        <!-- دکمه بازگشت به اول (جایگزین دکمه بعدی) -->
+        <a href="slide1.html" class="nav-button flex items-center bg-gray-600 hover:bg-gray-700 shadow-lg shadow-white/10">
+            بازگشت به صفحه اول (1)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

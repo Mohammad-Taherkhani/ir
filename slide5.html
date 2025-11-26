@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید 5: بازنویس پرس‌وجو (Query Rewriter)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .rewrite-box {
+            background-color: #262626;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid #fbbf24; /* amber-400 */
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            background-color: #44403c; /* stone-700 */
+            padding: 0.75rem;
+            border-radius: 8px;
+            border-right: 4px solid #f59e0b; /* amber-500 */
+        }
+        .step-number {
+            background-color: #fcd34d; /* amber-300 */
+            color: #1c1917; /* stone-900 */
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container cover-background" id="slide-5">
+    
+    <!-- هدر -->
+    <header>
+        <h2 class="slide-title">۱. بازنویس پرس‌وجو (Query Rewriter)</h2>
+        <p class="slide-subtitle">بهبود ورودی برای دقت بالای بازیابی</p>
+    </header>
+
+    <!-- بدنه -->
+    <main class="flex flex-grow gap-10">
+        
+        <!-- ستون توضیحات -->
+        <div class="w-1/2 flex flex-col justify-center">
+            <h3 class="text-2xl font-bold text-amber-400 mb-4">چرا به بازنویسی نیاز داریم؟</h3>
+            
+            <p class="text-gray-300 text-lg leading-8 mb-6">
+                پرس‌وجوهای کاربران اغلب کوتاه، مبهم، یا متکی بر تاریخچه چت هستند. Retriever‌ها (مثل Bi-Encoder) برای عملکرد بهتر، به پرس‌وجوهای دقیق و کامل نیاز دارند.
+            </p>
+
+            <div class="rewrite-box">
+                <h4 class="text-xl font-bold text-white mb-4">وظیفه LLM به عنوان Rewriter</h4>
+                <div class="step-item">
+                    <span class="step-number">۱</span>
+                    <p class="text-gray-300">
+                        اضافه کردن Context: بر اساس تاریخچه مکالمه، LLM پرس‌وجو را بازنویسی می‌کند تا مستقل از تاریخچه باشد.
+                    </p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">۲</span>
+                    <p class="text-gray-300">
+                        تجزیه پرس‌وجوهای پیچیده: پرس‌وجوهای چند مرحله‌ای را به چند پرس‌وجوی ساده‌تر برای جستجوی متوالی تبدیل می‌کند.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- ستون مثال -->
+        <div class="w-1/2 flex flex-col justify-center items-center bg-gray-800/30 rounded-2xl border border-gray-700 p-6">
+            <h3 class="text-2xl font-bold text-amber-400 mb-4">مثال</h3>
+            
+            <div class="w-full text-right p-3 bg-gray-700 rounded-lg mb-4">
+                <p class="text-lg text-white font-bold">محصولات جدید شرکت اپل چیه؟</p>
+            </div>
+            <div class="w-full text-right p-3 bg-gray-700 rounded-lg mb-4">
+                <p class="text-lg text-white font-bold">این شرکت، مدیر عاملش کیه؟</p>
+            </div>
+            
+            <div class="text-3xl text-amber-400 my-4">⬇ (Rewriter) ⬇</div>
+
+            <div class="w-full text-right p-4 bg-gray-900 rounded-lg border-2 border-amber-500">
+                <p class="text-sm text-gray-400">پرس‌وجوی بازنویسی‌شده برای Retriever:</p>
+                <p class="text-xl text-white font-bold">مدیر عامل شرکت اپل کیست؟"</p>
+            </div>
+            
+            <p class="mt-6 text-sm text-gray-500 text-center">
+                این پرس‌وجوی دقیق‌تر، شانس بازیابی سند درست را توسط Retriever به شدت افزایش می‌دهد.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- ناوبری -->
+    <div class="nav-bar">
+        <a href="slide4.html" class="nav-button flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            اسلاید قبلی (4)
+        </a>
+        <span class="text-xl font-bold text-white self-center">اسلاید 5 از 10</span>
+        <a href="slide6.html" class="nav-button flex items-center">
+            اسلاید بعدی (6)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

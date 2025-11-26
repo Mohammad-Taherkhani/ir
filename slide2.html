@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید ۲: شکاف معنایی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+<div class="slide-container cover-background" id="slide-2">
+    
+    <header>
+        <h2 class="slide-title">شکاف معنایی (Semantic Gap)</h2>
+        <p class="slide-subtitle">چرایی گذر از مدل‌های سنتی به مدل‌های زبانی بزرگ (LLMs)</p>
+    </header>
+
+    <main class="flex gap-8 text-2xl flex-grow pt-2">
+        
+        <!-- ستون چپ: Traditional IR -->
+        <div class="w-1/2 flex flex-col justify-between p-6 rounded-2xl bg-gray-800/80 border-2 border-red-500/30 shadow-lg">
+            <div>
+                <h3 class="text-3xl font-extrabold text-red-400 border-b-2 border-red-500/50 pb-3 mb-4">Traditional IR</h3>
+                <ul class="list-none space-y-6">
+                    <li class="text-xl">
+                        <span class="text-red-400 font-bold block text-sm mb-1">CORE MODEL</span>
+                        مدل‌های آماری مانند <strong>BM25</strong>
+                    </li>
+                    <li class="text-xl">
+                        <span class="text-red-400 font-bold block text-sm mb-1">MATCHING METHOD</span>
+                        تطابق لغوی <strong>(Lexical Matching)</strong><br>
+                        <span class="text-sm text-gray-400">شمارش عین کلمات مشترک</span>
+                    </li>
+                    <li class="text-xl">
+                        <span class="text-red-400 font-bold block text-sm mb-1">KEY FAILURE</span>
+                        عدم درک معنا و مترادف‌ها <strong>(Semantic Gap)</strong>
+                    </li>
+                </ul>
+            </div>
+            
+            <a href="example_fail.html" class="nav-button bg-red-600 hover:bg-red-700 w-full justify-center text-lg py-4 mt-4">
+                مثال شکست
+            </a>
+        </div>
+
+        <!-- ستون راست: LLM Revolution -->
+        <div class="w-1/2 flex flex-col justify-between p-6 rounded-2xl bg-gray-800/80 border-2 border-emerald-500/30 shadow-lg">
+            <div>
+                <h3 class="text-3xl font-extrabold text-emerald-400 border-b-2 border-emerald-500/50 pb-3 mb-4">LLM Revolution</h3>
+                <ul class="list-none space-y-6">
+                    <li class="text-xl">
+                        <span class="text-emerald-400 font-bold block text-sm mb-1">CORE MODELS</span>
+                        مدل‌های ترنسفورمر مانند <strong>BERT & GPT</strong>
+                    </li>
+                    <li class="text-xl">
+                        <span class="text-emerald-400 font-bold block text-sm mb-1">MATCHING METHOD</span>
+                        تطابق معنایی <strong>(Semantic Matching)</strong><br>
+                        <span class="text-sm text-gray-400">درک مفهوم و ارتباط کلمات</span>
+                    </li>
+                    <li class="text-xl">
+                        <span class="text-emerald-400 font-bold block text-sm mb-1">SOLUTION</span>
+                        استفاده از بردارهای چگال <strong>(Dense Embeddings)</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="example_success.html" class="nav-button bg-emerald-600 hover:bg-emerald-700 w-full justify-center text-lg py-4 mt-4">
+                 مثال موفقیت
+            </a>
+        </div>
+    </main>
+
+    <div class="nav-bar">
+        <a href="slide1.html" class="nav-button flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            اسلاید قبلی (۱)
+        </a>
+        <span class="text-xl font-bold text-white self-center">اسلاید ۲ از ۱۰</span>
+        <a href="slide3.html" class="nav-button flex items-center">
+            اسلاید بعدی (۳)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

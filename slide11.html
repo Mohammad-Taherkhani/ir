@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید ۱۱: منابع</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght=100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .ref-card {
+            background-color: #1e293b; /* bg-slate-800 */
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-right: 4px solid #64748b; /* slate-500 */
+            transition: all 0.3s;
+            display: flex;
+            align-items: flex-start;
+        }
+        .ref-card:hover {
+            background-color: #334155;
+            transform: translateX(-5px); /* حرکت جزئی به چپ برای افکت تعاملی */
+            border-right-color: #34d399; /* emerald-400 */
+        }
+        .ref-icon {
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            color: #94a3b8;
+        }
+        .ref-title {
+            color: #e2e8f0;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .ref-details {
+            color: #9ca3af; /* gray-400 */
+            font-size: 0.9rem;
+            font-family: sans-serif; /* برای متون انگلیسی */
+        }
+        .ref-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        .tag-main { background-color: #064e3b; color: #34d399; }
+        .tag-book { background-color: #451a03; color: #fbbf24; }
+        .tag-paper { background-color: #172554; color: #60a5fa; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container cover-background" id="slide-11">
+    
+    <!-- هدر -->
+    <header>
+        <h2 class="slide-title">منابع و مراجع (References)</h2>
+        <p class="slide-subtitle">لیست مقالات و کتب مورد استفاده در این ارائه</p>
+    </header>
+
+    <!-- بدنه -->
+    <main class="flex flex-col justify-center flex-grow px-8 overflow-y-auto">
+        
+        <!-- منبع اصلی -->
+        <div class="ref-card border-r-emerald-500">
+            <div class="ref-icon">📄</div>
+            <div>
+                <span class="ref-title">Large Language Models for Information Retrieval: A Survey</span>
+                <span class="ref-details block dir-ltr text-left">
+                    Yutao Zhu et al. (2023). <em>ACM Transactions on Information Systems (TOIS)</em>. [arXiv:2308.07107]
+                </span>
+                <span class="ref-tag tag-main">منبع اصلی ارائه</span>
+            </div>
+        </div>
+
+        <!-- سایر مقالات -->
+        <div class="ref-card">
+            <div class="ref-icon">📄</div>
+            <div>
+                <span class="ref-title">Pre-trained Language Models for Information Retrieval: A Survey</span>
+                <span class="ref-details block dir-ltr text-left">
+                    Jiafeng Guo et al. (2020). <em>arXiv preprint</em>. [arXiv:2009.00693]
+                </span>
+                <span class="ref-tag tag-paper">مقاله مکمل</span>
+            </div>
+        </div>
+
+        <div class="ref-card">
+            <div class="ref-icon">📄</div>
+            <div>
+                <span class="ref-title">Dense Text Retrieval based on Pretrained Language Models: A Survey</span>
+                <span class="ref-details block dir-ltr text-left">
+                    Yixuan Su et al. (2022). <em>arXiv preprint</em>. [arXiv:2104.06967]
+                </span>
+                <span class="ref-tag tag-paper">مقاله مکمل</span>
+            </div>
+        </div>
+
+        <!-- کتب درسی -->
+        <div class="ref-card">
+            <div class="ref-icon">📚</div>
+            <div>
+                <span class="ref-title">Text Data Management: A Practical Introduction</span>
+                <span class="ref-details block dir-ltr text-left">
+                    ChengZhai & Sean Massung (2016). <em>ACM and Morgan & Claypool Publishers</em>.
+                </span>
+                <span class="ref-tag tag-paper">مقاله مکمل</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ناوبری -->
+    <div class="nav-bar">
+        <!-- دکمه اسلاید قبلی -->
+        <a href="slide10.html" class="nav-button flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            اسلاید قبلی (۱۰)
+        </a>
+        
+        <span class="text-xl font-bold text-white self-center">پایان</span>
+
+        <!-- دکمه بازگشت به اول (جدید) -->
+        <a href="slide1.html" class="nav-button flex items-center bg-purple-600 hover:bg-purple-700">
+            بازگشت به کاور (۱)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

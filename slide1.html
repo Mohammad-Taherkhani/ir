@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلاید ۱: صفحه کاور</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font for Farsi -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <!-- لینک به فایل استایل‌های مشترک -->
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* تنظیمات سفارشی برای افکت گرادیانت پس زمینه */
+        .cover-background {
+            /* گرادیانت عمودی تیره و شیک */
+            background: linear-gradient(to bottom, #020617 0%, #1e293b 100%); 
+        }
+        .info-panel {
+            /* افکت شیشه ای بهبود یافته */
+            backdrop-filter: blur(15px);
+            background-color: rgba(30, 41, 59, 0.85); /* پس زمینه تیره و کمی شفاف */
+            border: 1px solid rgba(71, 85, 105, 0.4); 
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s;
+        }
+        .info-panel:hover {
+            border-color: #10b981; /* خط سبز زمردی پررنگ‌تر روی هاور (emerald-500) */
+        }
+        .neon-highlight {
+            color: #34d399; /* emerald-400 */
+        }
+        /* کلاس برای اطمینان از اینکه متن به هم نمی ریزد */
+        .text-section {
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- اعمال کلاس گرادیانت به Container -->
+<div class="slide-container cover-background" id="slide-1">
+    
+    <!-- محتوای اصلی اسلاید کاور -->
+    <div class="flex flex-col md:flex-row h-full w-full items-center justify-center p-8 md:pb-12">
+        
+        <div class="w-full md:w-1/2 flex flex-col justify-center order-2 md:order-1 mt-8 md:mt-0 md:pr-16">
+            <div class="info-panel w-full max-w-lg mx-auto md:mx-0 space-y-8">
+                <div class="pt-2 text-xl space-y-6">
+                    <p class="text-slate-300 text-section"></strong> بازیابی هوشمند اطلاعات</p>
+                    <p class="text-slate-300 text-section"><strong>استاد محترم:</strong> دکتر مهدی ملامطلبی</span></p>
+                    
+                    <!-- خط جدا کننده ضخیم‌تر با رنگ هایلایت -->
+                    <div class="border-t border-emerald-500 pt-4 mt-8">
+                        <!-- هایلایت شدن نام ارائه دهنده -->
+                        <p class="text-3xl font-extrabold text-white"><strong>ارائه دهنده:</strong> <span class="neon-highlight">محمد طاهرخانی</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 flex flex-col justify-center items-center space-y-8 text-center order-1 md:order-2 md:pl-16">
+            
+
+            <!-- <img src="png_path_for_llm_icon.png" rounded-xl">
+
+            </div>
+            <!-- **************************************** -->
+            
+            <h1 class="text-7xl sm:text-8xl font-black text-white tracking-wide whitespace-nowrap drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+                <span class="neon-highlight">مدل‌های LLMs</span>
+            </h1>
+            
+            <!-- زیرعنوان -->
+            <h2 class="text-3xl sm:text-4xl font-light text-slate-300 border-b border-white/30 pb-4">
+                در بازیابی اطلاعات و جستجوی هوشمند
+            </h2>
+            
+            <p class="text-xl text-gray-400 pt-6">Large Language Models for Information Retrieval: A Survey</p>
+            
+            <!-- دکمه میانبر به منابع (با رنگ Emerald) -->
+            <a href="slide11.html" class="inline-flex items-center gap-2 px-6 py-2 mt-4 text-sm font-medium text-slate-900 bg-emerald-400 rounded-full hover:bg-emerald-300 transition-all font-bold shadow-lg shadow-emerald-500/50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                مشاهده منابع و مراجع
+            </a>
+        </div>
+        
+    </div>
+    
+    <div class="nav-bar">
+
+
+        
+        <a href="slide2.html" class="nav-button flex items-center">
+            شروع
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
